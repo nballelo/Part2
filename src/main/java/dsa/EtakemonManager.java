@@ -1,3 +1,5 @@
+package dsa;
+
 import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
@@ -18,21 +20,19 @@ public class EtakemonManager {
     }
     private EtakemonManager() {
         cache=new HashMap<String, Usuario>();
-        logger.info("Se ha creado la cache");
     }
 
     public List<Usuario> listar() {
         List<Usuario>list=new ArrayList<Usuario>(cache.values());
         return list;
     }
-
     public Usuario getUser(String name) {
         return cache.get(name);
     }
-    List<Etackemons> getEtackemons(String name){
+    /*List<Etackemons> getEtackemons(String name){
         List<Etackemons>list=new ArrayList<Etackemons>();
         return cache.get(name).getMios();
-    }
+    }*/
 
     public boolean addUser(Usuario obj) {
         logger.info("Se ha añadido un usuario a la cache");
@@ -57,7 +57,7 @@ public class EtakemonManager {
 
 
     }
-    boolean addEtackemon(String name, Etackemons etackemon){
+   boolean addEtackemon(String name, Etackemons etackemon){
         if(cache.get(name)!=null){
             if(cache.get(name).getEtackemon(name)!=null){
                 Usuario a=cache.get(name);

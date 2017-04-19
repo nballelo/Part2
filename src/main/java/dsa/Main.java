@@ -1,3 +1,5 @@
+package dsa;
+
 import org.glassfish.grizzly.http.server.HttpServer;
 import org.glassfish.grizzly.http.server.StaticHttpHandler;
 import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
@@ -7,7 +9,7 @@ import java.io.IOException;
 import java.net.URI;
 
 /**
- * Main class.
+ * dsa.Main class.
  *
  */
 public class Main {
@@ -30,7 +32,7 @@ public class Main {
 
 
     /**
-     * Main method.
+     * dsa.Main method.
      * @param args
      * @throws IOException
      */

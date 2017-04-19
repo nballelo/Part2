@@ -1,20 +1,20 @@
+package dsa;
 import javax.inject.Singleton;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
 import java.util.ArrayList;
 import java.util.List;
 /**
  * Created by Ignacio on 19/04/2017.
  */
+
 @Path("/json")
 @Singleton
-public class REST {
-    protected EtakemonManager cache;
-    public REST() {
+public class JSONService {
+    private static EtakemonManager cache;
+    public JSONService() {
 
     }
-
     @GET
     @Path("/getAll")
     @Produces(MediaType.APPLICATION_JSON)
@@ -24,10 +24,11 @@ public class REST {
         return a;
     }
     @POST
-    @Path("/setUser")
+    @Path("/setNewUser")
     @Produces(MediaType.APPLICATION_JSON)
-    public void setUser(Usuario user){
+    public Usuario setUser(Usuario user){
         cache.getInstance().addUser(user);
+        return user;
     }
     @POST
     @Path("/setUser")
